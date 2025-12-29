@@ -1,0 +1,16 @@
+<button id="btn">Click me</button>
+<div id="tip" anchor="btn">I'm anchored!</div>
+
+<style>
+    #btn {
+        anchor-name: --btn;
+    }
+
+    #tip {
+        position: fixed;
+        position-anchor: --btn;
+        top: anchor(bottom);
+        left: anchor(left);
+        margin: 0;
+    }
+</style>

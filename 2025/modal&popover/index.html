@@ -1,0 +1,38 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modal Test</title>
+
+<style>
+    .button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    /*#popover-toggle {
+        anchor-name: --my-anchor;
+    }*/
+    [popover] {
+        position-area: bottom right;
+    }
+</style>
+
+<html>
+    <body>
+        <section>
+            <button
+                command="show-modal"
+                commandfor="paymentModal"
+                class="button"
+            >
+                Show modal
+            </button>
+            <dialog closedby="any" id="paymentModal">Content</dialog>
+        </section>
+
+        <section>
+            <button popovertarget="mypopover">Toggle Popover</button>
+            <div id="mypopover" popover>This is the popover content.</div>
+        </section>
+    </body>
+</html>
