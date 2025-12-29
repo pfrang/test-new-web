@@ -9,11 +9,14 @@
         font-size: 16px;
         cursor: pointer;
     }
-    /*#popover-toggle {
+    .popover-toggle {
         anchor-name: --my-anchor;
-    }*/
+    }
     [popover] {
-        position-area: bottom right;
+        position-area: bottom;
+        position-anchor: --my-anchor;
+        margin: 0;
+        position-try-fallbacks: top, left, right, flip-block, flip-inline;
     }
 </style>
 
@@ -31,8 +34,10 @@
         </section>
 
         <section>
-            <button popovertarget="mypopover">Toggle Popover</button>
-            <div id="mypopover" popover>This is the popover content.</div>
+            <button class="popover-toggle" popovertarget="myanchor">
+                Toggle Popover
+            </button>
+            <div id="myanchor" popover>This is the popover content.</div>
         </section>
     </body>
 </html>
