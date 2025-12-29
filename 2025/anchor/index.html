@@ -1,16 +1,49 @@
-<button id="btn">Click me</button>
-<div id="tip" anchor="btn">I'm anchored!</div>
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modal Test</title>
 
-<style>
-    #btn {
-        anchor-name: --btn;
-    }
+<html>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui nunc
+            mattis enim ut tellus elementum sagittis vitae et.
+        </p>
 
-    #tip {
-        position: fixed;
-        position-anchor: --btn;
-        top: anchor(bottom);
-        left: anchor(left);
-        margin: 0;
-    }
-</style>
+        <div class="anchor" anchor="my-anchor">⚓︎</div>
+
+        <div class="infobox">
+            <p>This is an information box.</p>
+        </div>
+
+        <p>
+            Nisi quis eleifend quam adipiscing vitae proin sagittis nisl
+            rhoncus. In arcu cursus euismod quis viverra nibh cras pulvinar.
+            Vulputate ut pharetra sit amet aliquam.
+        </p>
+
+        <p>
+            Malesuada nunc vel risus commodo viverra maecenas accumsan lacus.
+            Vel elit scelerisque mauris pellentesque pulvinar pellentesque
+            habitant morbi tristique. Porta lorem mollis aliquam ut porttitor.
+            Turpis cursus in hac habitasse platea dictumst quisque. Dolor sit
+            amet consectetur adipiscing elit. Ornare lectus sit amet est
+            placerat. Nulla aliquet porttitor lacus luctus accumsan.
+        </p>
+
+        <style>
+            .anchor {
+                anchor-name: --my-anchor;
+                width: 100px;
+            }
+            .infobox {
+                position-anchor: --my-anchor;
+                position: fixed;
+                left: anchor(right);
+                top: anchor(top);
+                margin-left: 10px;
+            }
+        </style>
+    </body>
+</html>
