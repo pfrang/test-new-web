@@ -9,14 +9,13 @@
         font-size: 16px;
         cursor: pointer;
     }
-    .popover-toggle {
-        anchor-name: --my-anchor;
-    }
-    [popover] {
+    .popover1 {
         position-area: bottom;
-        position-anchor: --my-anchor;
-        margin: 0;
         position-try-fallbacks: top, left, right, flip-block, flip-inline;
+    }
+    .popover2 {
+        position-area: top;
+        position-try-fallbacks: bottom, left, right, flip-block, flip-inline;
     }
 </style>
 
@@ -34,10 +33,19 @@
         </section>
 
         <section>
-            <button class="popover-toggle" popovertarget="myanchor">
-                Toggle Popover
+            <button popovertarget="mypopover">Toggle Popover</button>
+            <div class="popover1" id="mypopover" popover>
+                This is the popover content.
+            </div>
+        </section>
+
+        <section>
+            <button interestfor="mypopoverhint">
+                Toggle Popover Hing (hover)
             </button>
-            <div id="myanchor" popover>This is the popover content.</div>
+            <div class="popover2" id="mypopoverhint" popover="hint">
+                This is the popover content.
+            </div>
         </section>
     </body>
 </html>
