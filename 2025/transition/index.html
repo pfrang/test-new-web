@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Transition Test</title>
+        <style>
+            .hoverbox {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: coral;
+                visibility: hidden;
+                transition:
+                    transform 0.5s ease,
+                    background-color 0.5s ease,
+                    visibility 0.5s allow-discrete;
+            }
+            .hoverbox:hover + .box {
+                transform: scale(1.2);
+                visibility: visible;
+                background-color: lightseagreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hoverbox">Hover me</div>
+        <div class="box"></div>
+    </body>
+</html>
