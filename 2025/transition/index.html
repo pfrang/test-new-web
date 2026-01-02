@@ -5,6 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Transition Test</title>
         <style>
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
             .hoverbox {
                 width: 100px;
                 height: 100px;
@@ -14,21 +22,34 @@
                 width: 100px;
                 height: 100px;
                 background-color: coral;
-                visibility: hidden;
-                transition:
-                    transform 0.5s ease,
-                    background-color 0.5s ease,
-                    visibility 0.5s allow-discrete;
+                display: none;
+                opacity: 0;
+                transition-property: display, opacity;
+                transition-duration: 1s;
+                transition-behavior: allow-discrete;
             }
             .hoverbox:hover + .box {
-                transform: scale(1.2);
-                visibility: visible;
-                background-color: lightseagreen;
+                display: block;
+                opacity: 1;
+                // Starting style needed to transition in
+                @starting-style {
+                    opacity: 0;
+                }
+                /*background-color: lightseagreen;*/
+            }
+            .keyframesbox {
+                width: 100px;
+                height: 100px;
+                background-color: purple;
+            }
+            .keyframesbox:hover {
+                animation: appear 2s;
             }
         </style>
     </head>
     <body>
         <div class="hoverbox">Hover me</div>
         <div class="box"></div>
+        <div class="keyframesbox">Keyframes hover opacity</div>
     </body>
 </html>
