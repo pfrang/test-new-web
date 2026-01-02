@@ -17,6 +17,12 @@
         position-area: top;
         position-try-fallbacks: bottom, left, right, flip-block, flip-inline;
     }
+    .center-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
 </style>
 
 <html>
@@ -46,6 +52,16 @@
             <div class="popover2" id="mypopoverhint" popover="hint">
                 This is the popover content.
             </div>
+        </section>
+
+        <section class="center-section">
+            <button command="show-modal" commandfor="infoModal" class="button">
+                Show Info Modal
+            </button>
+            <dialog closedby="any" id="infoModal">
+                <h2>Information</h2>
+                <p>This is an informational modal dialog.</p>
+            </dialog>
         </section>
     </body>
 </html>
