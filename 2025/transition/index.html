@@ -5,14 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Transition Test</title>
         <style>
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
             .hoverbox {
                 width: 100px;
                 height: 100px;
@@ -31,11 +23,18 @@
             .hoverbox:hover + .box {
                 display: block;
                 opacity: 1;
-                // Starting style needed to transition in
+                /*Starting style needed to transition in*/
                 @starting-style {
                     opacity: 0;
                 }
-                /*background-color: lightseagreen;*/
+            }
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
             .keyframesbox {
                 width: 100px;
